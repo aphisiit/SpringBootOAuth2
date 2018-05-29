@@ -17,56 +17,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
-//@RestController
-//@RequestMapping("/springjwt")
-//public class ResourceController {
-//    @Autowired
-//    private GenericService userService;
-//
-//    private Logger LOGGER = LoggerFactory.getLogger(this.getClass());
-//
-//    @RequestMapping(value ="/cities")
-//    @PreAuthorize("hasAuthority('ADMIN_USER') or hasAuthority('STANDARD_USER')")
-//    public List<RandomCity> getUser(){
-//        return userService.findAllRandomCities();
-//    }
-//
-//    @RequestMapping(value ="/users", method = RequestMethod.GET)
-//    @PreAuthorize("hasAuthority('ADMIN_USER')")
-//    public List<User> getUsers(){
-//        return userService.findAllUsers();
-//    }
-//
-//    @RequestMapping(value ="/yourData", method = RequestMethod.GET)
-//    @PreAuthorize("hasAuthority('ADMIN_USER') or hasAuthority('STANDARD_USER')")
-//    public ResponseEntity<String> getYourData(Authentication authentication){
-//
-//        HttpHeaders headers = new HttpHeaders();
-//        headers.add("Content-Type","application/json; charset=utf-8;");
-//        try{
-//            User user = userService.findByUsername(authentication.getName());
-//
-//            LOGGER.info("user info");
-//            LOGGER.info("\n{}",new JSONSerializer().prettyPrint(true).exclude("class").exclude("username").exclude("password").serialize(user));
-//
-//            return new ResponseEntity<>(new JSONSerializer()
-//                    .prettyPrint(true)
-//                    .exclude("class")
-//                    .exclude("username")
-//                    .exclude("password")
-//                    .serialize(user),headers,HttpStatus.OK);
-//        }catch (Exception e) {
-//            LOGGER.info("error");
-//            return new ResponseEntity<>(new JSONSerializer().prettyPrint(true).deepSerialize("{ status : error }"), headers, HttpStatus.OK);
-//        }
-//    }
-//}
-
 @RestController
 @RequestMapping("/springjwt")
 public class ResourceController {
     @Autowired
     private GenericService userService;
+
+    private Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
     @RequestMapping(value ="/cities")
     @PreAuthorize("hasAuthority('ADMIN_USER') or hasAuthority('STANDARD_USER')")
@@ -82,8 +39,26 @@ public class ResourceController {
 
     @RequestMapping(value ="/yourData", method = RequestMethod.GET)
     @PreAuthorize("hasAuthority('ADMIN_USER') or hasAuthority('STANDARD_USER')")
-    public User getYourData(Authentication authentication){
-        return userService.findByUsername(authentication.getName());
+    public ResponseEntity<String> getYourData(Authentication authentication){
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type","application/json; charset=utf-8;");
+        try{
+            User user = userService.findByUsername(authentication.getName());
+
+            LOGGER.info("user info");
+            LOGGER.info("\n{}",new JSONSerializer().prettyPrint(true).exclude("class").exclude("username").exclude("password").serialize(user));
+
+            return new ResponseEntity<>(new JSONSerializer()
+                    .prettyPrint(true)
+                    .exclude("class")
+                    .exclude("username")
+                    .exclude("password")
+                    .serialize(user),headers,HttpStatus.OK);
+        }catch (Exception e) {
+            LOGGER.info("error");
+            return new ResponseEntity<>(new JSONSerializer().prettyPrint(true).deepSerialize("{ status : error }"), headers, HttpStatus.OK);
+        }
     }
 }
 
