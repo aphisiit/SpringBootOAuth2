@@ -32,7 +32,7 @@ public class GenericServiceImpl implements GenericService {
 
     @Override
     public List<User> findAllUsers() {
-        return (List<User>)userRepository.findAll();
+        return userRepository.findAll();
     }
 
     @Override
