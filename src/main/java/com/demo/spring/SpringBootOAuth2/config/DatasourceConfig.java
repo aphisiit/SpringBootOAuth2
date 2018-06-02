@@ -1,4 +1,4 @@
-package com.demo.spring.jwt2.config;
+package com.demo.spring.SpringBootOAuth2.config;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -20,7 +20,7 @@ import java.beans.PropertyVetoException;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "com.demo.spring.jwt2.repository")
+@EnableJpaRepositories(basePackages = "com.demo.spring.SpringBootOAuth2.repository")
 public class DatasourceConfig {
 
     @Bean
@@ -39,7 +39,7 @@ public class DatasourceConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(@Qualifier("datasource") DataSource ds) throws PropertyVetoException{
         LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactory.setDataSource(ds);
-        entityManagerFactory.setPackagesToScan(new String[]{"com.demo.spring.jwt2.domain"});
+        entityManagerFactory.setPackagesToScan(new String[]{"com.demo.spring.SpringBootOAuth2.domain"});
         JpaVendorAdapter jpaVendorAdapter = new HibernateJpaVendorAdapter();
         entityManagerFactory.setJpaVendorAdapter(jpaVendorAdapter);
         return entityManagerFactory;

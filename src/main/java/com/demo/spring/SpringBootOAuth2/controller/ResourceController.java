@@ -1,8 +1,8 @@
-package com.demo.spring.jwt2.controller;
+package com.demo.spring.SpringBootOAuth2.controller;
 
-import com.demo.spring.jwt2.domain.RandomCity;
-import com.demo.spring.jwt2.domain.User;
-import com.demo.spring.jwt2.service.GenericService;
+import com.demo.spring.SpringBootOAuth2.domain.RandomCity;
+import com.demo.spring.SpringBootOAuth2.domain.User;
+import com.demo.spring.SpringBootOAuth2.service.GenericService;
 import flexjson.JSONSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

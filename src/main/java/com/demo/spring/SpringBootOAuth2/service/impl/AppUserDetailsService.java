@@ -1,7 +1,7 @@
-package com.demo.spring.jwt2.service.impl;
+package com.demo.spring.SpringBootOAuth2.service.impl;
 
-import com.demo.spring.jwt2.domain.User;
-import com.demo.spring.jwt2.repository.UserRepository;
+import com.demo.spring.SpringBootOAuth2.domain.User;
+import com.demo.spring.SpringBootOAuth2.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
