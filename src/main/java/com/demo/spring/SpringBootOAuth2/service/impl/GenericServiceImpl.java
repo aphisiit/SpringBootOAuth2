@@ -1,10 +1,10 @@
-package com.demo.spring.jwt2.service.impl;
+package com.demo.spring.SpringBootOAuth2.service.impl;
 
-import com.demo.spring.jwt2.domain.RandomCity;
-import com.demo.spring.jwt2.domain.User;
-import com.demo.spring.jwt2.repository.RandomCityRepository;
-import com.demo.spring.jwt2.repository.UserRepository;
-import com.demo.spring.jwt2.service.GenericService;
+import com.demo.spring.SpringBootOAuth2.domain.RandomCity;
+import com.demo.spring.SpringBootOAuth2.domain.User;
+import com.demo.spring.SpringBootOAuth2.repository.RandomCityRepository;
+import com.demo.spring.SpringBootOAuth2.repository.UserRepository;
+import com.demo.spring.SpringBootOAuth2.service.GenericService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

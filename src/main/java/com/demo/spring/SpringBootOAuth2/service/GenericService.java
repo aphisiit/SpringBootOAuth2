@@ -1,7 +1,7 @@
-package com.demo.spring.jwt2.service;
+package com.demo.spring.SpringBootOAuth2.service;
 
-import com.demo.spring.jwt2.domain.RandomCity;
-import com.demo.spring.jwt2.domain.User;
+import com.demo.spring.SpringBootOAuth2.domain.RandomCity;
+import com.demo.spring.SpringBootOAuth2.domain.User;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.demo.spring.jwt2.config;
+package com.demo.spring.SpringBootOAuth2.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

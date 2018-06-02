@@ -1,4 +1,4 @@
-package com.demo.spring.jwt2;
+package com.demo.spring.SpringBootOAuth2;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
