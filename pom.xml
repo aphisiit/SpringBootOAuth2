@@ -8,7 +8,7 @@
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>jwt2</name>
+	<name>SpringBootOAuth2</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
